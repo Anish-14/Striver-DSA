@@ -1,12 +1,10 @@
 // Subsets 2
 // https://leetcode.com/problems/subsets-ii/
 
-
 #include<iostream>
 using namespace std;
 class Solution {
 public:
-
     void solve(vector<vector<int>> &ans, vector<int>& nums, vector<int>& temp, int index) {
         ans.push_back(temp); // push as soon as you reach this node (before branching)
 

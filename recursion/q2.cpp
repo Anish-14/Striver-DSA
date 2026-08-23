@@ -1,9 +1,12 @@
+#include<iostream>
+using namespace std;
+
 // Combination Sum
 // https://leetcode.com/problems/combination-sum/description/
 
 class Solution {
 public:
-    int n ;
+    int n;
     void getSum(vector<int> &candidates, int index, int target, vector<int> temp, vector<vector<int>> &ans){
         // base case
         if(target == 0){    // save answer and go back
@@ -22,6 +25,7 @@ public:
         // notTake
         getSum(candidates, index+1, target, temp, ans);
     }
+
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         n = candidates.size();
         vector<vector<int>> ans;

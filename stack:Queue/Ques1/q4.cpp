@@ -68,7 +68,7 @@ public:
 
 
 
-// Easier implementation using an extra variable size
+// Easier implementation using an extra variable count
 class myQueue{
 private:
     vector<int> v;

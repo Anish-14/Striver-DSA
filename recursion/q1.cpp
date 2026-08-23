@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 // Check if there exists a subsequence with sum K
 // https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/1
 

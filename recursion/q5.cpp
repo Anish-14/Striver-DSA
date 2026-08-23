@@ -20,8 +20,8 @@ public:
         // include
         temp.push_back(nums[n]);
         solve(ans, temp, nums, n+1);
-
         temp.pop_back();
+
         // exclude
         solve(ans, temp, nums, n+1);
     }
@@ -35,7 +35,3 @@ public:
         return ans;
     }
 };
-
-
-
-
