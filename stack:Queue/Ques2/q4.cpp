@@ -5,6 +5,7 @@ using namespace std;
 // Remove K Digits
 // https://leetcode.com/problems/remove-k-digits/description/
 
+// we've to maintain increasing order of numbers in order to get the min number
 class Solution {
 public:
     string removeKdigits(string num, int k) {
@@ -57,10 +58,3 @@ public:
         return ans;
     }
 };
-
-
-
-
-
-
-

@@ -15,6 +15,7 @@ class Solution {
                 return {s1[i], s2[i]};
             }
         }
+        // * means it is not possible, # means it don't give any info
         if(s1.length() > s2.length()){
             return {'*', '*'};
         }
@@ -22,6 +23,9 @@ class Solution {
     }
     string findOrder(vector<string> &words) {
         vector<vector<char>> adj(26, vector<char>());
+
+        // better because two words can give same info that a->b, we don't want redundancy because the indegree concept will fail completely
+        // vector<unordered_set<char>> adj(26);             
         vector<int> indegree(26, -1);
         int n = words.size();
         for(auto &word : words){
@@ -29,6 +33,8 @@ class Solution {
                 indegree[ch - 'a'] = 0;
             }
         }
+
+        // creating the graph
         for(int i = 1; i<n; i++){
             pair<char,char> p = dict(words[i-1], words[i]);
             if(p.first == '*')  return "";
@@ -36,9 +42,17 @@ class Solution {
                 continue;
             }
             adj[p.first-'a'].push_back(p.second);
-            indegree[p.first - 'a'] = 0;
-            indegree[p.second - 'a'] = 0;
         }
+
+        // creating the graph for the set adj list
+        // for (int i = 1; i < n; i++) {
+        //     pair<char, char> p = dict(words[i - 1], words[i]);
+        //     if (p.first == '*') return "";
+        //     if (p.first == '#') continue;
+
+        //     // unordered_set::insert automatically ignores duplicates
+        //     adj[p.first - 'a'].insert(p.second);
+        // }
         
         // kahn's algo
         int cnt = 0;
@@ -57,7 +71,6 @@ class Solution {
         }
         
         string ans = "";
-        
         while(!q.empty()){
             char top = q.front();
             q.pop();
@@ -70,7 +83,6 @@ class Solution {
                 }
             }
         }
-        
         
         if(ans.length() != cnt) return "";
         

@@ -18,10 +18,10 @@ int solve(int n, vector<int> &heights){
 
     return min(left, right);
 }
-int frogJump(int n, vector<int> &heights)
-{
+int frogJump(int n, vector<int> &heights){
     return solve(n-1, heights);
 }
+
 
 // memo
 int solve(int n, vector<int> &heights, vector<int> &dp){
@@ -40,11 +40,11 @@ int solve(int n, vector<int> &heights, vector<int> &dp){
 
     return dp[n] = min(left, right);
 }
-int frogJump(int n, vector<int> &heights)
-{
+int frogJump(int n, vector<int> &heights){
     vector<int> dp(n, -1);
     return solve(n-1, heights, dp);
 }
+
 
 // Tabulation 
 int frogJump(int n, vector<int> &heights)
@@ -64,7 +64,7 @@ int frogJump(int n, vector<int> &heights)
 }
 
 // space optimisation
-int frogJump(int n, vector<int> &heights)
+int frogJump(int n, vector<int> &heights) 
 {
     int justLeft = 0;
     int leftToLeft = 0;

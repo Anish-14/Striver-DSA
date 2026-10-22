@@ -86,11 +86,9 @@ public:
             }
         }
 
-        // edge case --> what if all entries are zero
-        for(int i = 0; i<n*n; i++){
-            ans = max(ans, size[i]);
-        }
-
+        // edge case --> what if all entries are ones
+        if(ans == 0)    return n*n;
+        
         return ans;
     }
 };

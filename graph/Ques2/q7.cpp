@@ -8,7 +8,6 @@ using namespace std;
 // In a way this is similar to detecting a cycle in a directed graph
 
 
-
 class Solution {
 public:
     bool dfs(int node, vector<vector<int>> &adj, int &cnt, vector<int> &vis, vector<int> &pathVis){

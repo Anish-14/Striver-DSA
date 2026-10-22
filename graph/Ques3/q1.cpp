@@ -7,6 +7,10 @@ using namespace std;
 
 // finding shortest distance from source to all other nodes
 // using topological sort
+// we're using topo sort to make the complexity O(V+E), simple BFS will require queue relaxation
+// we need to push the node if we are updating the distance because all the nodes
+// emerging from this node will also change value due to it
+// topo sort prevents this
 
 class Solution {
   public:
@@ -28,10 +32,12 @@ class Solution {
             adj[it[0]].push_back({it[1], it[2]});       // node, weight
         }
         
+        // this stack is storing the topo sort from dfs function 
         stack<int> st;
         vector<int> vis(V);
         
-        dfs(0, adj, vis,st);
+        // source node is zero only
+        dfs(0, adj, vis, st);
         
         vector<int> dis(V, 1e9);
         dis[0] = 0;
@@ -52,7 +58,6 @@ class Solution {
                 dis[i] = -1;
             }
         }
-        
         
         return dis;
     }

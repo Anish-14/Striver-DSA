@@ -5,7 +5,7 @@ using namespace std;
 // Path With Minimum Effort
 // https://leetcode.com/problems/path-with-minimum-effort/description/
 
-// Godd problem for dijkstra's algorithm understanding
+// Good problem for dijkstra's algorithm understanding
 
 
 // Using Dijkstra's algorithm 
@@ -15,7 +15,7 @@ public:
         int n = heights.size(), m = heights[0].size();
         vector<vector<int>> dis(n, vector<int>(m, 1e9));
         // queue<pair<int, pair<int,int>>> q;      // history, x, y
-        priority_queue< pair<int, pair<int,int>>, vector<pair<int, pair<int,int>>>, greater<pair<int, pair<int,int>>> > q;
+        priority_queue< pair<int,pair<int,int>>, vector<pair<int,pair<int,int>>>, greater<pair<int,pair<int,int>>> > q;
 
         q.push({0, {0, 0}});
         dis[0][0] = 0;

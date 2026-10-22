@@ -4,7 +4,6 @@ using namespace std;
 // https://www.naukri.com/code360/problems/count-subsets-with-sum-k_3952532?leftPanelTabValue=PROBLEM
 // count subsets with sum k 
 
-
 // recursion + memo
 int mod = 1e9 + 7;
 int solve(int index, vector<int> &arr, int target, int n, vector<vector<int>> &dp){

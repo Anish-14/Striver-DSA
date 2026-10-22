@@ -4,7 +4,6 @@ using namespace std;
 // Min cost to cut a stick
 // https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/
 
-
 // Recursion 
 class Solution {
 public:

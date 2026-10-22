@@ -16,7 +16,6 @@ int longestBitonicSubsequence(vector<int>& arr, int n)
     vector<int> increase_dp(n, 1);
     vector<int> decrease_dp(n, 1);
 
-
     // let's build for increasing
     for(int i = 0; i<n; i++){
         for(int j = 0; j<i; j++){
@@ -35,13 +34,13 @@ int longestBitonicSubsequence(vector<int>& arr, int n)
         }
     }
     
-
     // now we'll figure out the answer
     // only increasing, only decreasing or bitonic
     int ans = 1;
     for(int i = 0; i<n; i++){
         int inc = increase_dp[i];
         int dec = decrease_dp[i];
+        // we can directly do ans = bito and it'll work as bito has included inc and dec in it.
         int bito = increase_dp[i] + decrease_dp[i] - 1;
 
         ans = max(ans, max(inc, max(dec, bito)));
@@ -49,8 +48,3 @@ int longestBitonicSubsequence(vector<int>& arr, int n)
 
     return ans;
 }
-
-
-
-
-

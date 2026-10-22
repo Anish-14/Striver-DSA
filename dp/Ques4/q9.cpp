@@ -4,10 +4,10 @@ using namespace std;
 // buy and sell stock with transaction fee
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
 
-
 // recursion + memo
 // this is also the same as for the infinite transactions one, here we only subtracted the transaction fee after
 // selling the stock
+
 class Solution {
 public:
     int f(int index, int buy, vector<int>&prices, int fee, vector<vector<int>> &dp){
@@ -35,4 +35,26 @@ public:
 };
 
 
+// Tabulation
+class Solution {
+public:
+    int maxProfit(vector<int>& prices, int fee) {
+        int n = prices.size();
+        // dp[n][0] and dp[n][1] are initialized to 0 (base case)
+        vector<vector<int>> dp(n + 1, vector<int>(2, 0));
 
+        // Fill backwards from day n-1 down to day 0
+        for(int index = n - 1; index >= 0; index--){
+            for(int buy = 0; buy <= 1; buy++){
+                if(buy == 1){
+                    dp[index][buy] = max(-prices[index] + dp[index + 1][0], 0 + dp[index + 1][1]);
+                } 
+                else{
+                    dp[index][buy] = max(prices[index] - fee + dp[index + 1][1], 0 + dp[index + 1][0]);
+                }
+            }
+        }
+
+        return dp[0][1];
+    }
+};

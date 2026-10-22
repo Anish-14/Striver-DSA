@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 // Edit distance
 // https://leetcode.com/problems/edit-distance/description/
 
@@ -10,13 +9,13 @@ class Solution {
 public:
     int solve(int ind1, int ind2, string &word1, string &word2, vector<vector<int>> &dp){
         // base case
-        if(ind2 < 0 && ind1 >= 0){
-            return ind1 + 1;
+        if(ind1 >= 0 && ind2 < 0){  // delete the ind1+1 values
+            return ind1+1;
         }
-        if(ind1 < 0 && ind2 >= 0){
+        if(ind1 < 0 && ind2 >= 0){  // add these ind2+1 values
             return ind2+1;
         }
-        if(ind1 < 0 || ind2 < 0){
+        if(ind1 < 0 || ind2 < 0){   
             return 0;
         }
         
@@ -70,7 +69,7 @@ public:
                 }
             }
         }
-
+        
         return dp[n][m];
     }
 };

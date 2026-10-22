@@ -15,7 +15,7 @@ public:
         }
 
         if(text1[idx1] == text2[idx2]){
-            cout<<"matched for "<< idx1<< " "<< idx2<<endl;
+            // cout<<"matched for "<< idx1<< " "<< idx2<<endl;
             return 1 + solve(idx1-1, idx2-1, text1, text2);
         }
         return max(solve(idx1-1, idx2, text1, text2), solve(idx1, idx2-1, text1, text2));
@@ -56,6 +56,8 @@ class Solution {
 public:
     int longestCommonSubsequence(string text1, string text2) {
         int n = text1.length(), m = text2.length();
+        // The length of the Longest Common Subsequence (LCS) between the 
+        // first i characters of text1 and the first j characters of text2.
         vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
 
         for(int i = 1; i<=n; i++){

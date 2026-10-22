@@ -50,9 +50,4 @@ class Solution {
 // current shortest distance from the source node.
 // In Dijkstra's algorithm, we need to always process the node with the smallest distance first.
 // A priority queue allows us to efficiently retrieve the node with the smallest distance,
-// whereas a regular queue would process nodes in the order they were added, which may not be optimal for Dijkstra's algorithm.
-
-
-
-
-
+// whereas a regular queue would process nodes in the order they were added, which may not be optimal for Dijkstra's algorithm.w

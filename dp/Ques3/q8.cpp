@@ -4,7 +4,6 @@ using namespace std;
 // Minimum Insertion Steps to Make a String Palindrome
 // https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
 
-
 // Recursion + Memo
 class Solution {
 public:
@@ -22,12 +21,13 @@ public:
 
         return dp[start][end] = 1 + min(solve(start+1, end, s, dp), solve(start, end-1, s, dp));
     }
-    int minInsertions(string s) {
+    int minInsertions(string s){
         int n = s.length();
         vector<vector<int>> dp(n, vector<int>(n, -1));
         return solve(0, n-1, s, dp);
     }       
 };
+
 
 
 // Tabulation 
@@ -37,6 +37,7 @@ public:
         int n = s.length();
         vector<vector<int>> dp(n, vector<int>(n, 0));
 
+        // just go in reverse manner
         for(int i = n-1; i>=0; i--){
             for(int j = 0; j<n; j++){
                 if(i >= j)  continue;

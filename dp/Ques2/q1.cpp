@@ -4,6 +4,7 @@ using namespace std;
 // Cherry Pickup 2
 // https://leetcode.com/problems/cherry-pickup-ii/
 
+// try this one --> Cherry Pickup --> https://leetcode.com/problems/cherry-pickup/description/
 
 // Recursion + memo     (3D dp problem)
 class Solution {
@@ -17,6 +18,7 @@ public:
             if(j1 == j2)    return grid[i][j1];
             return grid[i][j1] + grid[i][j2];
         }
+        // memo
         if(dp[i][j1][j2] != -1){
             return dp[i][j1][j2];
         }
@@ -38,6 +40,7 @@ public:
         return solve(0, 0, m-1, grid, n, m, dp);    // i, j1, j2 as the row is same for both the robots 
     }
 };
+
 
 // Tabulation 
 class Solution {

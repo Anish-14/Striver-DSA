@@ -5,8 +5,6 @@ using namespace std;
 // search in a BST
 // https://leetcode.com/problems/search-in-a-binary-search-tree/
 
-
-
 class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {

@@ -4,7 +4,6 @@ using namespace std;
 // Unbounded knapsack
 // https://www.naukri.com/code360/problems/unbounded-knapsack_1215029?leftPanelTabValue=PROBLEM
 
-
 // Recursion + Tabulation
 int solve(int index, vector<int> &val, vector<int>&wt, int capacity, vector<vector<int>> &dp){
         if(index == 0){

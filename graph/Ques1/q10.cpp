@@ -4,7 +4,6 @@ using namespace std;
 // Number of Islands
 // https://leetcode.com/problems/number-of-islands/description/
 
-
 class Solution {
 public:
     int n, m;

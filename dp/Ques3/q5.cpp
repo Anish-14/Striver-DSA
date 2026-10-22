@@ -4,7 +4,6 @@ using namespace std;
 // print LCS
 // https://www.naukri.com/code360/problems/print-longest-common-subsequence_8416383?leftPanelTabValue=PROBLEM
 
-
 // Recursion + memo
 // we just used the same method as in previous question, just in place of counting we are now saving the 
 // character and forming a string by joining them all
@@ -33,8 +32,11 @@ string findLCS(int n, int m,string &s1, string &s2){
 }
 
 
+
 // Tabulation 
 string findLCS(int n, int m,string &text1, string &text2){
+    // The length of the Longest Common Subsequence (LCS) between the 
+    // first i characters of text1 and the first j characters of text2.
 	vector<vector<string>> dp(n+1, vector<string> (m+1, ""));
 
     for(int i = 1; i<=n; i++){

@@ -4,7 +4,6 @@ using namespace std;
 // Palindromic Partitioning
 // https://www.geeksforgeeks.org/problems/palindromic-patitioning4845/1
 
-
 // recursion + memo
 class Solution {
   public:   

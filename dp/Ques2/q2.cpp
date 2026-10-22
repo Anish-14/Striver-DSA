@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-// Subset sum equals target (it should subsequence tbh)
+// Subset sum equals target (it should be subsequence tbh)
+// 
 
 // Recursion 
 bool solve(int index, int n, int target, vector<int>&arr){

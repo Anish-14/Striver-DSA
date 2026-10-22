@@ -16,7 +16,7 @@ public:
             adj[roads[i][1]].push_back({roads[i][0], roads[i][2]});
         }
 
-        vector<pair<long long,long long>> dis(n, {1e18,0});
+        vector<pair<long long,long long>> dis(n, {1e18,0});     // dis, count
         priority_queue< pair<long long,int>, vector<pair<long long,int>>, greater<pair<long long,int>> > q;
         
         q.push({0, 0});     // dis, node

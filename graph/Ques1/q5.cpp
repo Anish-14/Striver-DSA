@@ -39,7 +39,6 @@ public:
                     grid[newr][newc] = 2;
                 }
             }
-
         }
 
         // If it is not possible to rot all the oranges then return -1;

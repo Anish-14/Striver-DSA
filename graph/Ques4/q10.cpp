@@ -5,7 +5,6 @@ using namespace std;
 // Number of Operations to Make Network Connected
 // https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/
 
-
 class Solution {
 public:
     vector<int> parent, rank;

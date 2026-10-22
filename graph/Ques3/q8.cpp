@@ -2,13 +2,8 @@
 #include<set>
 using namespace std;
 
-
 // Shortest Path in Binary Matrix
 // https://leetcode.com/problems/shortest-path-in-binary-matrix/description/=
-
-
-
-
 
 class Solution {
 public:
@@ -39,7 +34,7 @@ public:
                 if(newx >= 0 && newx < n && newy >= 0 && newy < m && grid[newx][newy] == 0
                 && !vis[newx][newy]){
                     dis[newx][newy] = distance + 1;
-                    q.push({dis[newx][newy],{newx, newy}});
+                    q.push({dis[newx][newy], {newx, newy}});
                     vis[newx][newy] = 1;
                 }
             }
@@ -50,5 +45,48 @@ public:
     }
 };
 
+
+
+// same approach with cleaner code
+class Solution {
+public:
+    int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
+        int n = grid.size();
+        if (grid[0][0] == 1 || grid[n-1][n-1] == 1) return -1;
+        if (n == 1) return 1; // single cell [0][0] is both start and target
+
+        queue<pair<int, int>> q;
+        q.push({0, 0});
+        grid[0][0] = 1; // mark visited in-place
+
+        int steps = 1;
+
+        int dx[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int dy[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+        while (!q.empty()) {
+            int sz = q.size();
+            while (sz--) {
+                auto [x, y] = q.front();
+                q.pop();
+
+                if (x == n - 1 && y == n - 1) return steps;
+
+                for (int i = 0; i < 8; i++) {
+                    int nx = x + dx[i];
+                    int ny = y + dy[i];
+
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && grid[nx][ny] == 0) {
+                        grid[nx][ny] = 1; // mark visited immediately on push
+                        q.push({nx, ny});
+                    }
+                }
+            }
+            steps++;
+        }
+
+        return -1;
+    }
+};
 
 

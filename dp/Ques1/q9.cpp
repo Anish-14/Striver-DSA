@@ -4,7 +4,6 @@ using namespace std;
 //  Triangle
 // https://leetcode.com/problems/triangle/
 
-
 // Recur + Memo
 class Solution {
 public:
@@ -39,7 +38,7 @@ public:
     int minimumTotal(vector<vector<int>>& triangle) {
         int n = triangle.size();
         // base case is already included in it as our base case is the last row of this array only
-        vector<vector<int>> dp = triangle;
+        vector<vector<int>> dp = triangle; 
 
         for(int i = n-2; i>=0; i--){
             for(int j = 0; j<=i; j++){
@@ -50,5 +49,3 @@ public:
         return dp[0][0];
     }
 };
-
-

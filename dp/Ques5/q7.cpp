@@ -12,6 +12,9 @@ using namespace std;
 // for the second last, this last balloon will be either left or right
 // so in this sense we can calculate the value with actually monitoring which is the left and right element 
 // that we need to take into our mind to multiply with
+
+// Key Rule: The loop selects index $k$ as the LAST balloon to be burst in the range $[i, j]$.
+// Therefore, its adjacent neighbors when it bursts will be $nums[i-1]$ and $nums[j+1]$.
 class Solution {
 public:
     int solve(int i, int j, vector<int> &nums, vector<vector<int>> &dp){
@@ -44,22 +47,6 @@ public:
 // Tabulation 
 class Solution {
 public:
-    int solve(int i, int j, vector<int> &nums, vector<vector<int>> &dp){
-        // base case
-        if(i > j)   return 0;
-        if(dp[i][j] != -1){
-            return dp[i][j];
-        }
-
-        int maxi = INT_MIN;
-        // try to burst all possible ballons
-        for(int k = i; k<=j; k++){
-            int burst = nums[i-1]*nums[k]*nums[j+1] + solve(i, k-1, nums, dp) + solve(k+1, j, nums, dp);
-            maxi = max(maxi, burst);
-        }
-
-        return dp[i][j] = maxi;
-    }
     int maxCoins(vector<int>& nums) {
         int n = nums.size();
         nums.insert(nums.begin(), 1);

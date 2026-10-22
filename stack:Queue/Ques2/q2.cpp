@@ -11,7 +11,7 @@ using namespace std;
 // the moment we encounter the nse we calculate the answer
 class Solution {
 public:
-    int largestRectangleArea(vector<int>& heights) {
+    int largestRectangleArea(vector<int>& heights){
         int n = heights.size();
         stack<int> st;      // will store the index in increasing order
         int maxi = 0;

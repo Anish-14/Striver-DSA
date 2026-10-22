@@ -5,6 +5,30 @@ using namespace std;
 // Construct Binary Search Tree from Preorder Traversal
 // https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/description/
 
+
+// Damn!
+// This is the nicest shit
+class Solution {
+public:
+    TreeNode* build(vector<int> &pre, int &i, int bound, int size){
+        if(i >= size || pre[i] > bound)   return NULL;
+
+        TreeNode* root = new TreeNode(pre[i]);
+        i++;
+
+        root->left = build(pre, i, root->val, size);
+        root->right = build(pre, i, bound, size);
+
+        return root;
+    }
+    TreeNode* bstFromPreorder(vector<int>& preorder) {
+        int n = preorder.size();
+        int i = 0;
+        return build(preorder, i, INT_MAX, n);
+    }
+};
+
+
 // This problem is same as constructing a binary tree from pre and inorder traversal, the only catch here is to get that the 
 // inorder traversal of a BST is always in a sorted order. We can get the inorder traversal by simply sorting the preorder
 
@@ -45,7 +69,3 @@ public:
         return root;
     }
 };
-
-
-
-

@@ -4,6 +4,7 @@ using namespace std;
 // Maximal Rectangle
 // https://leetcode.com/problems/maximal-rectangle/description/
 
+// it uses the concept of the maximum area in histogram concept
 class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {

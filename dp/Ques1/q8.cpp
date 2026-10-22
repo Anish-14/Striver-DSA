@@ -4,8 +4,6 @@ using namespace std;
 // Minimum path sum
 // https://leetcode.com/problems/minimum-path-sum/
 
-
-
 // Recursion + Memo
 class Solution {
 public:
@@ -40,9 +38,11 @@ public:
         vector<vector<int>> dp = grid;
         int m = grid.size();
         int n = grid[0].size();
+        // first col
         for(int i = 1; i<m; i++){
             dp[i][0] += dp[i-1][0];
         }
+        // first row
         for(int i = 1; i<n; i++){
             dp[0][i] += dp[0][i-1];
         }
@@ -56,4 +56,5 @@ public:
         return dp[m-1][n-1];
     }
 };
+
 

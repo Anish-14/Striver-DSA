@@ -4,7 +4,6 @@ using namespace std;
 // BFS --> Breadth First Search
 // A graph traversal algorithm
 
-
 // https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
 // BFS traversal
 

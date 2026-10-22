@@ -4,7 +4,6 @@ using namespace std;
 // coin change
 // https://leetcode.com/problems/coin-change/
 
-
 // recursion + memo
 class Solution {
 public:
@@ -39,9 +38,10 @@ class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
         int n = coins.size();
+        // The minimum number of coins needed to make a total sum of val, considering only the first i + 1 coins (from index 0 up to index i).
         vector<vector<int>> dp(n, vector<int>(amount+1, 0));
-        // fill base cases first
 
+        // fill base cases first
         for(int i = 0; i <= amount; i++){
             if(i % coins[0] == 0)   dp[0][i] = i/coins[0];
             else dp[0][i] = 1e9;
@@ -70,6 +70,7 @@ class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
         int INF = 1e9;
+        // The minimum number of coins needed to make a total sum of amt using any combination of the available coins.
         vector<int> dp(amount + 1, INF);
         dp[0] = 0;
 

@@ -23,6 +23,7 @@ public:
         int n = adj.size();
         vector<int> vis(n);
 
+        // here n is adj's size which is already n+1 therefore we're not going for equal sign here
         for(int i = 1; i<n; i++){
             if(!vis[i]){
                 ans++;

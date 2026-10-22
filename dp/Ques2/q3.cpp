@@ -30,7 +30,7 @@ public:
 // memoization  (here as target can go negative therefore we used map instead of vector for dp)
 class Solution {
 public:
-    int solve(int index, vector<int> &nums, int target,vector<unordered_map<int,int>> &dp){
+    int solve(int index, vector<int> &nums, int target, vector<unordered_map<int,int>> &dp){
         if(index < 0){
             if(target == 0) return 1;
             return 0;

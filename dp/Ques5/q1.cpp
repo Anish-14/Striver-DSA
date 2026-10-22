@@ -11,7 +11,7 @@ class Solution {
     vector<int> getLIS(vector<int>& arr) {
         // Code here
         int n = arr.size();
-        vector<int> length(n , 1), index(n);        // this length is kind of a dp vector
+        vector<int> length(n , 1), index(n);        // this length is kind of a dp vector, index stores the index to the previous number in the sequence
         int maxi = 1;       // will store the maximum length
         int maxIndex = 0;   // index of that number where the maximum LIS ends
         for(int i = 0; i<arr.size(); i++){

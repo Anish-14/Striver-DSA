@@ -34,8 +34,8 @@ public:
         // first row
         for(int j = 0; j<m; j++){
             if(board[0][j] == 'O' && !vis[0][j]){
-                    dfs(0, j, board, vis);
-                }
+                dfs(0, j, board, vis);
+            }
         }
         // last row
         for(int j = 0; j<m; j++){
@@ -54,12 +54,6 @@ public:
             if(board[i][m-1] == 'O' && !vis[i][m-1]){
                 dfs(i, m-1, board, vis);
             }
-        }
-
-        for(int i = 0; i<n; i++){
-            for(int j = 0; j<m; j++){
-                cout<<vis[i][j]<<" ";
-            }cout<<endl;
         }
 
         for(int i = 0; i<n; i++){
@@ -83,8 +77,9 @@ public:
         int n = board[0].size();
         stack<pair<int,int>> st;
 
-        auto pushIfO = [&](int x, int y) {
-            if (x >= 0 && x < m && y >= 0 && y < n && board[x][y] == 'O') {
+        // this inline function is great!!
+        auto pushIfO = [&](int x, int y){
+            if(x >= 0 && x < m && y >= 0 && y < n && board[x][y] == 'O') {
                 st.push({x, y});
                 board[x][y] = '#'; 
             }
@@ -99,6 +94,7 @@ public:
             pushIfO(m - 1, j);
         }
 
+        // this is BFS only
         while (!st.empty()) {
             auto [x, y] = st.top(); st.pop();
             pushIfO(x - 1, y);

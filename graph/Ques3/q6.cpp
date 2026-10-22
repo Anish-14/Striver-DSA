@@ -5,6 +5,7 @@ using namespace std;
 // Dijkstra's algorithm
 // https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
 
+// this is used in weighted undirected graph
 // Using set    
 
 // better than priority queue, as it doesn't allow duplicate entries, so we don't have to do 
@@ -21,7 +22,7 @@ class Solution {
             adj[it[1]].push_back({it[0], it[2]});
         }
         
-    set<pair<int,int>> st;      // we can't use unordered_set here, as we need the data in sorted order
+        set<pair<int,int>> st;      // we can't use unordered_set here, as we need the data in sorted order
         vector<int> dis(V, 1e9);
         dis[src] = 0;
         st.insert({0, src});     // dis, node

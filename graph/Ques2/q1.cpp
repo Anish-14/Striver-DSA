@@ -7,6 +7,7 @@ using namespace std;
 // Bipartite Graph --> In an undirected graph if you can color them by two colors such that no two colors are adjacent to each 
 // other than that graph can be called bipartite graph
 
+// only odd cycle graphs are NOT Bipartite
 
 // BFS
 // TC --> O(N + E)
@@ -42,7 +43,6 @@ public:
                     }
                 }
             }
-             
         }
 
         return true;

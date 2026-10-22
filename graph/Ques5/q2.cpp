@@ -56,8 +56,8 @@ class Solution {
             vis[row][col] = 1;
             cnt++;
             
-            vector<int>dx = {-1, 0, 1, 0};
-            vector<int>dy = {0, -1, 0, 1};
+            vector<int> dx = {-1, 0, 1, 0};
+            vector<int> dy = {0, -1, 0, 1};
             
             for(int ind = 0; ind<4; ind++){
                 int newr = row + dx[ind];
@@ -69,12 +69,11 @@ class Solution {
                     if(getParent(nodeNo, parent) != getParent(adjNodeNo, parent)){
                         unionByRank(nodeNo, adjNodeNo, parent, rank);
                         cnt--;
-                    }
-                    
+                    }  
                 }
             }
+
             ans.push_back(cnt);
-            
         }
         
         return ans;

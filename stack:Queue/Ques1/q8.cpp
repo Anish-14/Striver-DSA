@@ -5,7 +5,6 @@ using namespace std;
 // Trapping Rain Water
 // https://leetcode.com/problems/trapping-rain-water/description/
 
-
 // TC O(n) && SC O(n) 
 class Solution {
 public:
@@ -37,9 +36,9 @@ public:
 };
 
 
+
 // best one 
 // TC O(n) && SC O(1)
-
 class Solution {
 public:
     int trap(vector<int>& height) {

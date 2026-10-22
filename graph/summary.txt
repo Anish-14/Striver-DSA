@@ -1,0 +1,17 @@
+DFS,BFS
+Cycle in undirected Graph --> use parent's array
+Number of Islands and all 
+Bipartite Graph
+Cycle in Directred Graph --> DFS --> vis & pathVis
+Topo Sort --> using DFS
+Kahn's Algo --> Topo Sort using BFS --> Indegree method
+Cycle in Directed Graph --> BFS -> Topo Sort
+course scheduling and all --> using kahn's algo
+Shortest path in Directed Acyclic Graph --> BFS with Topo for better results than BFS with queue relaxation 
+shortest path in undirected graph with 1 dis each --> simple BFS
+shortest path in undirected graph with weights --> Dijkstra's Algo
+Bellman-Ford Algo --> shortest path from src to all the other nodes --> V-1 relaxations
+Floyd Warshall Algo --> i,j,k
+Prim's Algo --> Min spanning tree --> take a minHeap and select the minimum weights needed to join each nodes
+Kruskal's Algo --> DSU approach to min spanning tree --> sort the edge lengths and then unite the nodes using small weights
+Kosaraju Algo --> No. of strongly connected component --> Topo sort -> reverse edges --> dfs

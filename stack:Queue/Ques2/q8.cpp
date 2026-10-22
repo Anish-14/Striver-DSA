@@ -19,6 +19,7 @@ public:
         this->prev = NULL;
     }
 };
+
 class LRUCache {
 public:
     int capacity;
@@ -55,6 +56,7 @@ public:
             insert(mp[key]);
             return mp[key]->val;
         }
+        
         return -1;
     }
     

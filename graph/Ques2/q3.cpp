@@ -4,7 +4,6 @@ using namespace std;
 // Eventual safe states
 // https://leetcode.com/problems/find-eventual-safe-states/description/
 
-
 // DFS
 class Solution {
 public:

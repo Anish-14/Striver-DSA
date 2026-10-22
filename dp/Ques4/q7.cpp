@@ -4,10 +4,8 @@ using namespace std;
 // buy and sell stock 5
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/description/
 
-
-
 // recursion + memo
-class Solution {
+class Solution{
 public:
     // i --> day
     // t --> no. of transactions
@@ -64,7 +62,6 @@ public:
         for(int i = n-1; i>=0; i--){
             for(int t = k; t>=0; t--){
                 for(int state = 2; state >= 0; state--){
-
                     // do nothing, as we can always do nothing at each day
                     long long ans = dp[i+1][t][state];
 

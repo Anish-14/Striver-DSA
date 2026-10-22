@@ -2,7 +2,6 @@
 #include<vector>
 using namespace std;
 
-
 //  LFU cache
 //  https://leetcode.com/problems/lfu-cache/description/
 
@@ -19,6 +18,7 @@ public:
         this->prev = NULL;
     }
 };
+
 class DLL{
 public:
     Node *head, *tail;
@@ -49,6 +49,7 @@ public:
         return node;
     }
 };
+
 class LFUCache {
     int capacity, minFreq;
     unordered_map<int, Node*> keyTable;
@@ -79,6 +80,7 @@ public:
             update(node);
             return node->val;
         }
+        
         return -1;
     }
     

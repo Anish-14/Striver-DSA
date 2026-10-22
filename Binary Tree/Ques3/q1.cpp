@@ -5,6 +5,8 @@ using namespace std;
 // All Nodes Distance K in Binary Tree
 // https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
 
+
+// we're connecting the node to its parent and then we're just treating it like an undirected graph
 class Solution {
 public:
     void fillParent(TreeNode* root, TreeNode* parent, unordered_map<TreeNode*, TreeNode*> &mp){
@@ -28,7 +30,7 @@ public:
 
         // start BFS from the target node
         queue<pair<int, TreeNode*>> q;
-        q.push(make_pair(0, target));
+        q.push(make_pair(0, target));           // dis, node
         unordered_map<TreeNode*, bool> vis;
 
         while(!q.empty()){

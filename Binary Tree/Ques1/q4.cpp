@@ -12,6 +12,7 @@ public:
         if(root == NULL){
             return {};
         }
+        
         vector<vector<int>> ans;
         queue<TreeNode*> q;
         q.push(root);

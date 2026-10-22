@@ -15,6 +15,7 @@ public:
         if(ind2 < 0){
             return 1;
         }
+        
         if(dp[ind1][ind2] != -1){
             return dp[ind1][ind2];
         }

@@ -18,3 +18,38 @@ public:
         return leftCnt + rightCnt + 1;
     }
 };
+
+
+// for complete binary tree this is more optimal solution which runs in O((logn)^2)
+class Solution {
+public:
+    int getLeftHeight(TreeNode* root){
+        int cnt = 0;
+        while(root != NULL){
+            cnt++;
+            root = root->left;
+        }
+
+        return cnt;
+    }
+    int getRightHeight(TreeNode* root){
+        int cnt = 0;
+        while(root != NULL){
+            cnt++;
+            root = root->right;
+        }
+
+        return cnt;
+    }
+    int countNodes(TreeNode* root) {
+        if(root == NULL)    return 0;
+
+        int lh = getLeftHeight(root);
+        int rh = getRightHeight(root);
+
+        if(lh == rh)    return (1<<lh) - 1;
+
+        return countNodes(root->left) + countNodes(root->right) + 1;
+    }
+};
+

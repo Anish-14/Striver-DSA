@@ -4,7 +4,6 @@ using namespace std;
 // Word Ladder
 // https://leetcode.com/problems/word-ladder/description/
 
-
 class Solution {
 public:
     bool isValid(string a, string b){
@@ -37,6 +36,7 @@ public:
         for(int i = 0; i<n; i++){
             if(wordList[i] == endWord){
                 target = i;
+                break;
             }
         }
         if(target == -1){
@@ -57,6 +57,8 @@ public:
                 if(!vis[it]){
                     vis[it] = 1;
                     if(it == target){
+                        // we're adding an extra +1 before returning because we wanted
+                        // the number of nodes in the path not the edges
                         return dis[top] + 1 + 1;
                     }
                     q.push(it);

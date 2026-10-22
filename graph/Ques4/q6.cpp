@@ -5,7 +5,6 @@ using namespace std;
 // https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
 
 // Prim's Algorithm
-
 class Solution {
   public:
     int spanningTree(int V, vector<vector<int>>& edges) {
@@ -21,18 +20,19 @@ class Solution {
         q.push({0,0});       // weight, node
         int sum = 0;
         
-        
         while(!q.empty()){
             int distance = q.top().first;
             int node = q.top().second;
             q.pop();
+
             if(!vis[node]){
                 sum += distance;
                 vis[node] = 1;
             }
+            
             for(auto it : adj[node]){
                 if(!vis[it.first]){
-                    q.push({it.second,it.first});
+                    q.push({it.second, it.first});
                 }
             }
         }
@@ -40,3 +40,26 @@ class Solution {
         return sum;
     }
 };
+
+
+
+// clearn prim's algo
+while(!q.empty()){
+    auto [weight, node] = q.top();
+    q.pop();
+
+    // Stale entry check: discard duplicate entries pushed earlier
+    if (vis[node]) continue;
+
+    vis[node] = 1;
+    sum += weight;
+
+    for (auto& edge : adj[node]) {
+        int neighbor = edge.first;
+        int nextWeight = edge.second;
+
+        if (!vis[neighbor]) {
+            q.push({nextWeight, neighbor});
+        }
+    }
+}

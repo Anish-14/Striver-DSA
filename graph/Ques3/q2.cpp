@@ -5,7 +5,6 @@ using namespace std;
 // https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1
 
 // Using simple BFS
-
 class Solution {
   public:
     vector<int> shortestPath(int V, vector<vector<int>> &edges, int src) {

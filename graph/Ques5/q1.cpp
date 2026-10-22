@@ -43,9 +43,9 @@ public:
             parent[i] = i;
         }
 
-        unordered_map< string, int> mp;     // mail, parentNode
+        unordered_map<string, int> mp;     // mail, parentNode
 
-        // lets create are mapping 
+        // lets create our mapping 
         for(int i = 0; i<n; i++){
             for(int j = 1; j<accounts[i].size(); j++){
                 string mail = accounts[i][j];

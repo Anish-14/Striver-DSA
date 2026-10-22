@@ -6,7 +6,6 @@ using namespace std;
 // https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
 
 // Brute Force --> 
-
 // find the inorder of the BST, now we have a sorted array. We can easily apply the two sum logic here and find the answer in O(2N) TC. (one for inorder and one for two sum)
 // The SC --> O(N) to store the N nodes
 
@@ -40,6 +39,7 @@ public:
         myStack.pop();
         if(!reverse)    pushAll(tempNode->right);
         else pushAll(tempNode->left);
+
         return tempNode->val;
     }
     
@@ -47,6 +47,9 @@ public:
         return !myStack.empty();
     }
 };
+
+
+
 class Solution {
 public:
     bool findTarget(TreeNode* root, int k) {

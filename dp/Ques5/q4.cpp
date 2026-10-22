@@ -24,9 +24,9 @@ public:
                     }
                 }
             }
-            // we are saying that for this length this is the freq and it to the map as 
+            // we are saying that for this length this is the freq and save it to the map as 
             // it can be that other indexes also might give us the same length subsequence
-
+            // it is equivalent to +=
             mp[dp[i].first] = mp[dp[i].first] + dp[i].second;   
 
             if(dp[i].first > maxi){
@@ -37,7 +37,3 @@ public:
         return mp[maxi];
     }
 };
-
-
-
-

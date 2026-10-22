@@ -3,8 +3,7 @@ using namespace std;
 
 // Longest Increasing Subsequence
 // https://leetcode.com/problems/longest-increasing-subsequence/description/
-
-
+ 
 // Recur + memo
 class Solution {
 public:
@@ -36,8 +35,7 @@ public:
 
 
 // Tabulation 
-
-class Solution {
+class Solution{
 public:
     int lengthOfLIS(vector<int>& nums) {
         int n = nums.size();
@@ -58,10 +56,10 @@ public:
 };
 
 
-
-// binary search solution (best solution for this problem && is intuitvie as well)
+// best solution for this problem && is intuitvie as well
 class Solution {
 public:
+    // binary search for lower_bound 
     int findIndex(vector<int> &res, int target){
         int left = 0, right = res.size()-1;
         while(left <= right){
@@ -91,6 +89,27 @@ public:
             }
         }
 
+        return res.size();
+    }
+};
+
+
+
+// same approach as above just using the inbuilt function for lower_bound
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int> res;
+        for(int x : nums) {
+            auto it = lower_bound(res.begin(), res.end(), x);
+            
+            if (it == res.end()) {
+                res.push_back(x); // x is larger than all elements in res
+            } 
+            else {
+                *it = x;          // Overwrite the first element >= x
+            }
+        }
         return res.size();
     }
 };

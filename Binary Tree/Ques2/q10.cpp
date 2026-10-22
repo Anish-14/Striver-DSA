@@ -7,9 +7,9 @@ using namespace std;
 
 // Good Problem
 
-class Solution {
+class Solution{ 
 public:
-    int widthOfBinaryTree(TreeNode* root) {
+    int widthOfBinaryTree(TreeNode* root){
         if(root == NULL){
             return 0;
         }
@@ -41,7 +41,3 @@ public:
         return int(ans);
     }
 };
-
-
-
-

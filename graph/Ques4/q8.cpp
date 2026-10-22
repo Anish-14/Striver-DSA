@@ -53,6 +53,10 @@ class Solution {
         }
         
         sort(edges.begin(), edges.end());
+        // I could've not swapped and used this instead
+        // sort(edges.begin(), edges.end(), [](const vector<int> &a, const vector<int>&b){
+        //     return a[2] < b[2];
+        // });
         int ans = 0;
         for(int i = 0; i<edges.size(); i++){
             int u = edges[i][2];

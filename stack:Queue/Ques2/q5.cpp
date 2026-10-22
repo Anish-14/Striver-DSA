@@ -5,6 +5,7 @@ using namespace std;
 // Online Stock Span
 // https://leetcode.com/problems/online-stock-span/description/
 
+// maintain decreasing order here as well
 class StockSpanner {
 public:
     stack<pair<int,int>> st;        // price , ans

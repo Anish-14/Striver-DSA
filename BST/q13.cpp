@@ -41,7 +41,6 @@ class Solution {
     }
     int largestBst(Node *root) {
         return helper(root).maxSize;
-        
     }
 };
 

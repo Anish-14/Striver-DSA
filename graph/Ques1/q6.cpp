@@ -12,7 +12,6 @@ class Solution {
         q.push(node);
         vis[node] = 1;
         
-        
         while(!q.empty()){
             int top = q.front();
             q.pop();
@@ -58,7 +57,6 @@ class Solution {
 };
 
 
-
 // DFS
 class Solution {
   public:
@@ -101,7 +99,3 @@ class Solution {
         return false;
     }
 };
-
-
-
-

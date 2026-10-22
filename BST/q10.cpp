@@ -5,7 +5,6 @@ using namespace std;
 // Binary Search Tree Iterator
 // https://leetcode.com/problems/binary-search-tree-iterator/description/
 
-
 // My brute solution
 class BSTIterator {
 public: 
@@ -59,6 +58,7 @@ public:
         return true;
     }
 };
+
 
 
 // Best Solution TC --> O(1) && SC --> O(H)      H : height of binary tree

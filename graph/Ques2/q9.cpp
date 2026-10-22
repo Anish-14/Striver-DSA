@@ -9,6 +9,8 @@ class Solution {
 public:
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
         int v = graph.size();
+        // we're inverting the graph, we're saying that hey all the nodes that ends on 
+        // a node which has indegree == 0 can be part of eventual safe state
         vector<vector<int>> adj(v);
         vector<int> indegree(v);
         vector<int> ans;
@@ -40,7 +42,6 @@ public:
                 }
             }
         }
-
 
         sort(ans.begin(), ans.end());
         return ans;

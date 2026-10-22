@@ -5,7 +5,6 @@ using namespace std;
 // printing the shortest distance path using dijkstra's algorithm
 // https://www.geeksforgeeks.org/problems/shortest-path-in-weighted-undirected-graph/0
 
-
 class Solution {
   public:
     vector<int> shortestPath(int n, int m, vector<vector<int>>& edges) {
@@ -20,7 +19,7 @@ class Solution {
         dis[1] = 0;
         priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> >pq;
         pq.push({0, 1});
-        vector<int> parent(n+1, -1);        // this will be needed to pring the path
+        vector<int> parent(n+1, -1);        // this will be needed to print the path
         parent[1] = 1;
         
         
@@ -44,13 +43,14 @@ class Solution {
         if(dis[n] == 1e9)   return {-1};
         
         vector<int> ans;
-        
         int i = n;                  // saving the path here
         while(parent[i] != i){
             ans.push_back(i);
             i = parent[i];
         }
         ans.push_back(i);
+
+        // GFG told to add the distance as the first element in the array so this also needs to be done
         ans.push_back(dis[n]);
         
         reverse(ans.begin(), ans.end());

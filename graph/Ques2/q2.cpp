@@ -5,7 +5,7 @@ using namespace std;
 // https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
 
 
-// DFS  --> use two visited arrays --> 1. Visited 2.Pathvisited
+// DFS  --> use two visited arrays --> 1. Visited  2.Pathvisited
 // If we find a node in the pathVisited array, then it's a cycle because this node belongs to the path that 
 // we're currently traversing. But if it's not in the pathVisited array, it means we've already visited it,
 //  but it's not part of the current path, so we can skip it.

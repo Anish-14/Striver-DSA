@@ -6,8 +6,10 @@ using namespace std;
 
 // this is how we can save every traversal in one go using only one stack
 // dry run to understand this
+
 vector<int> preInPostTraversal(TreeNode* root){
     if(root == NULL)    return {};
+    
     stack<pair<TreeNode*, int> > st;
     st.push({root, 1});         // 1 --> pre, 2 --> in, 3 --> post
     vector<int> pre, in , post;  

@@ -4,7 +4,6 @@ using namespace std;
 // Shortest Common Supersequence 
 // https://leetcode.com/problems/shortest-common-supersequence/description/
 
-
 // for the length of common supersequence --> len(s1) + len(s2) - LCS(s1, s2)
 
 // printing the string --> 

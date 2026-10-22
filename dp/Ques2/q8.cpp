@@ -37,6 +37,7 @@ class Solution {
   public:
     int knapsack(int W, vector<int> &val, vector<int> &wt) {
         int n = val.size();
+        // dp[i][weight] represents the maximum value (profit) you can collect using a knapsack capacity of weight.
         vector<vector<int>> dp(n, vector<int>(W+1, 0));
         // prepare the base cases
         for(int w = 0; w<=W; w++){
@@ -55,7 +56,6 @@ class Solution {
                 dp[i][weight] = max(take, notTake);
             }
         }
-        
         
         return dp[n-1][W];
     }
